@@ -80,7 +80,7 @@ def read_pdf_files_from_folder(folder_path):
                 document_name = obj['Key']
                 file=obj['Key'].split('/')[-1]
 
-                client = boto3.client('textract',region_name=boto3.Session().region_name,aws_access_key_id='AKIARU3MIISFVHPQBHLV',aws_secret_access_key='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')
+                client = boto3.client('textract',region_name=boto3.Session().region_name,aws_access_key_id='',aws_secret_access_key='')
                 job_id = start_job(client, s3_bucket_name, document_name)
                 print("Started job with id: {}".format(job_id))
                 if is_job_complete(client, job_id):
